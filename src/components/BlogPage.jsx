@@ -5,14 +5,13 @@ import CategorSelection from './CategorySelection';
 const BlogPage = () => {
 
     const [blogs, setBlogs] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const pageSize = 12;
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [activeCategory, setActiveCategory] = useState(null);
 
     useEffect(() => {
         async function fetchBlogs() {
-            let url = `http://localhost:5000/blogs?page=${currentPage}&limit=${pageSize}`;
+
+            let url = `http://localhost:5000/blogs`;
 
             if (selectedCategory) {
                 url += `&category=${selectedCategory}`;
@@ -26,17 +25,14 @@ const BlogPage = () => {
 
 
         fetchBlogs();
-    }, [currentPage, pageSize, selectedCategory]);
+    }, [selectedCategory]);
 
-    const handlePageChange = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
 
     const handleCategoryChange = (category) => {
         setSelectedCategory(category);
-        setActiveCategory(category);
-        setCurrentPage(1); // Reset to first page when category changes
+        setActiveCategory(category);// Reset to first page when category changes
     }
+
     console.log(blogs);
 
     return (
@@ -48,7 +44,11 @@ const BlogPage = () => {
 
             {/* blog card section */}
             <div>
-                <BlogCard blogs= {blogs} currentPage={currentPage} selectedCategory={selectedCategory} pageSize={pageSize} />
+                <BlogCard blogs= {blogs} selectedCategory={selectedCategory} />
+            </div>
+
+            <div className="flex justify-center mt-8">
+                
             </div>
 
         </div>
