@@ -1,6 +1,7 @@
 import React from 'react'
+import { FaArrowRight } from 'react-icons/fa6'
 
-const Home = () => {
+const Banner = () => {
   return (
 
     <div className="bg-black text-white py-40 px-4 text-center">
@@ -11,4 +12,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Banner

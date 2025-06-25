@@ -4,49 +4,49 @@ import React from "react";
 const blogs = [
   {
     id: 1,
-    image: "https://via.placeholder.com/300x180?text=Blog+1",
+    image: "https://picsum.photos/200",
     title: "Understanding React Hooks",
     date: "2025-06-10",
   },
   {
     id: 2,
-    image: "https://via.placeholder.com/300x180?text=Blog+2",
+    image: "https://picsum.photos/200",
     title: "Styling in React: Best Practices",
     date: "2025-06-08",
   },
   {
     id: 3,
-    image: "https://via.placeholder.com/300x180?text=Blog+3",
+    image: "https://picsum.photos/200",
     title: "JavaScript ES2025 Features",
     date: "2025-06-05",
   },
   {
     id: 4,
-    image: "https://via.placeholder.com/300x180?text=Blog+4",
+    image: "https://picsum.photos/200",
     title: "Dark Mode UI Design Tips",
     date: "2025-06-02",
   },
   {
     id: 5,
-    image: "https://via.placeholder.com/300x180?text=Blog+5",
+    image: "https://picsum.photos/200",
     title: "Deploying React Apps Easily",
     date: "2025-05-30",
   },
   {
     id: 6,
-    image: "https://via.placeholder.com/300x180?text=Blog+6",
+    image: "https://picsum.photos/200",
     title: "Optimizing Web Performance",
     date: "2025-05-28",
   },
   {
     id: 7,
-    image: "https://via.placeholder.com/300x180?text=Blog+7",
+    image: "https://picsum.photos/200",
     title: "Accessibility in Modern Web",
     date: "2025-05-25",
   },
   {
     id: 8,
-    image: "https://via.placeholder.com/300x180?text=Blog+8",
+    image: "https://picsum.photos/200",
     title: "State Management Simplified",
     date: "2025-05-22",
   },
@@ -66,7 +66,6 @@ const popularBlogs = [
 
 const BlogPage = () => (
   <div
-  id="all-blogs"
   className="blog-page-container"
     style={{
       display: "flex",

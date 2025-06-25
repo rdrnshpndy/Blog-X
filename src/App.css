@@ -3,3 +3,39 @@
 .active {
     @apply text-orange-500 underline underline-offset-5;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 10;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+}
+
+.pagination a:hover {
+  background: #eee;
+}
+
+.pagination li.activePagination a {
+  background: rgb(255, 165, 165);
+  border-radius: 4px;
+  color: #fff;
+}
+
+.active-button {
+  color: orange
+}
