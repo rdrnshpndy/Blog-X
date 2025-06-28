@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
 import CategorSelection from './CategorySelection';
+import Sidebar from './Sidebar';
+import Searchingsorting from './searchingsorting'; // Assuming this is a component for search and sorting functionality
 
 const BlogPage = () => {
 
     const [blogs, setBlogs] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [activeCategory, setActiveCategory] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [sortBy, setSortBy] = useState('');
 
     useEffect(() => {
         async function fetchBlogs() {
@@ -14,9 +18,9 @@ const BlogPage = () => {
             let url = `http://localhost:5000/blogs`;
 
             if (selectedCategory) {
-                url += `&category=${selectedCategory}`;
-            }   
-            
+                url += `?category=${selectedCategory}`;
+            }
+
             const response = await fetch(url);
             const data = await response.json();
             setBlogs(data);
@@ -38,17 +42,38 @@ const BlogPage = () => {
     return (
         <div>
             {/* category section */}
-            <div>
+            <div className='px-6'>
                 <CategorSelection onSelectCategory={handleCategoryChange} activeCategory={activeCategory} selectedCategory={selectedCategory} />
             </div>
 
             {/* blog card section */}
-            <div>
-                <BlogCard blogs= {blogs} selectedCategory={selectedCategory} />
-            </div>
+            <div className="flex flex-col lg:flex-row gap-8 mx-6">
 
-            <div className="flex justify-center mt-8">
-                
+                <div>
+
+                    <div>
+                        <Searchingsorting
+                            onSearch={setSearchTerm}
+                            onSort={setSortBy}
+                        />
+                    </div>
+                    
+
+                    <div>
+                    <BlogCard
+                        blogs={blogs}
+                        selectedCategory={selectedCategory}
+                        searchTerm={searchTerm}
+                        sortBy={sortBy}
+                    />
+                    </div>
+                    
+                </div>
+
+                <div>
+                    <Sidebar />
+                </div>
+
             </div>
 
         </div>

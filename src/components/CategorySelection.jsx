@@ -4,17 +4,24 @@ const CategorSelection = ({ onSelectCategory, activeCategory }) => {
     const categories = ["Startups", "Security", "AI", "Apps", "Tech"];
 
     return (
-        <div className="px-4 mb-8 lg:space-x-16 flex flex-wrap items-center border-b-2 py-5 text-gray-900 font-semibold">
-            <button onClick={() => onSelectCategory(null)} className={`lg:ml-12 ${activeCategory ? "" : "active-button"}`}>All</button>
-            {categories.map((category) => (
+        <div className="px-4 mb-8 border-b-2 py-5 text-gray-900 font-semibold">
+            <div className="flex flex-wrap items-center justify-between lg:justify-start w-full gap-y-2 gap-x-4">
                 <button
-                    onClick={() => onSelectCategory(category)}
-                    className={`mr-4 ${activeCategory === category ? "active-button" : ""}`} // Adjusted to mr-4 for better spacing
-                    key={category}
+                    onClick={() => onSelectCategory(null)}
+                    className={` ${activeCategory ? "" : "active-button"}`}
                 >
-                    {category}
+                    All
                 </button>
-            ))}
+                {categories.map((category) => (
+                    <button
+                        onClick={() => onSelectCategory(category)}
+                        className={`${activeCategory === category ? "active-button" : ""}`}
+                        key={category}
+                    >
+                        {category}
+                    </button>
+                ))}
+            </div>
         </div>
     );
 };
