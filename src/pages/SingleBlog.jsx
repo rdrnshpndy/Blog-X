@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router';
 import { FaUser } from 'react-icons/fa';
 import { FaClock } from 'react-icons/fa';
 import Sidebar from '../components/Sidebar';
 
+// Helper to get comments from localStorage by blog id
+function getStoredComments(blogId) {
+  const stored = localStorage.getItem(`comments_${blogId}`);
+  return stored ? JSON.parse(stored) : [];
+}
+
 const SingleBlog = () => {
   const data = useLoaderData();
-  const { title, image, category, author, published_date, reading_time, content } = data[0];
+  const { title, image, category, author, published_date, reading_time, content, id } = data[0];
 
-  console.log(data);
+  // Use blog id to store/retrieve comments
+  const [comments, setComments] = useState(() => getStoredComments(id));
+  const [commentInput, setCommentInput] = useState("");
+
+  useEffect(() => {
+    setComments(getStoredComments(id));
+  }, [id]);
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (commentInput.trim() === "") return;
+    const now = new Date();
+    const date = now.toISOString().slice(0, 10);
+    const time = now.toTimeString().slice(0, 5);
+    const newComments = [
+      ...comments,
+      { name: "Anonymous", text: commentInput, date, time }
+    ];
+    setComments(newComments);
+    localStorage.setItem(`comments_${id}`, JSON.stringify(newComments));
+    setCommentInput("");
+  };
 
   return (
     <div className='bg-gray-200 w-full'>
@@ -30,6 +57,49 @@ const SingleBlog = () => {
             className="text-base mt-8 text-gray-900 mb-6"
             dangerouslySetInnerHTML={{ __html: content }}
           />
+
+          {/* --- Comment Section Start --- */}
+          <div className="mt-12 bg-white rounded-lg shadow p-6">
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">Comments</h3>
+            {/* Comment input section */}
+            <div className="mb-8">
+              <form onSubmit={handleCommentSubmit} className="flex flex-col gap-2">
+                <textarea
+                  className="border rounded p-2 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none"
+                  rows={3}
+                  placeholder="Add a comment..."
+                  value={commentInput}
+                  onChange={e => setCommentInput(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className="self-end bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600 transition"
+                >
+                  Post Comment
+                </button>
+              </form>
+            </div>
+            {/* Divider */}
+            <div className="border-t border-gray-300 my-6"></div>
+            {/* Comment list section */}
+            <div className="max-h-48 overflow-y-auto">
+              {comments.length === 0 && (
+                <p className="text-gray-500">No comments yet. Be the first to comment!</p>
+              )}
+              {[...comments].reverse().map((c, idx) => (
+                <div key={idx} className="mb-4 border-b pb-2">
+                  <div className="flex justify-between items-center">
+                    <span className="font-bold text-orange-500">{c.name}</span>
+                    <span className="text-xs text-gray-400 ml-2">
+                      {c.date} {c.time}
+                    </span>
+                  </div>
+                  <p className="text-gray-700 mt-1">{c.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* --- Comment Section End --- */}
         </div>
 
         <div>

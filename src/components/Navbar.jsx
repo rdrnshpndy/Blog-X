@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router'
 import { GiAbacus, GiBrokenSkull, GiBuffaloHead, GiHelicopter, GiSeaDragon } from "react-icons/gi"
 import { FaFacebook, FaInstagram, FaXTwitter, FaAlignJustify, FaX } from "react-icons/fa6";
+import Modal from './Modal';
 
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);}
@@ -18,6 +20,14 @@ const Navbar = () => {
         { path: '/admissions', link: 'Admissions' },
         { path: '/blog', link: 'Blog' }
     ];  
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
 
   return (
     <header className='bg-black text-white static top-0 left-0 right-0 font-roboto'>
@@ -42,8 +52,10 @@ const Navbar = () => {
                 <a href="/" className='hover:text-orange-500'><FaFacebook/></a>
                 <a href="/" className='hover:text-orange-500'><FaInstagram/></a>
                 <a href="/" className='hover:text-orange-500'><FaXTwitter/></a>
-                <button className='bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Log in</button>
+                <button onClick={openModal} className='bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Log in</button>
             </div>
+
+            < Modal isOpen={isModalOpen} onClose={closeModal} />
 
             <div className='md:hidden items-center flex gap-4'>
                 <button onClick={toggleMenu} className='cursor-pointer'>{isMenuOpen ? <FaX className='w-5 h-5'/> : <FaAlignJustify className='w-5 h-5'/>}</button>
