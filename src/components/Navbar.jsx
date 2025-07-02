@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <header className='bg-black text-white static top-0 left-0 right-0 font-roboto'>
-        <nav className='px-4 py-4 max-w-7xl mx-auto flex items-center justify-between'>
+        <nav className='px-4 py-4 max-w-full mx-auto flex items-center justify-between'>
 
             <a href="/" className='text-2xl font-bold text-white'>Project<span className='text-orange-500'>X</span>
             </a>

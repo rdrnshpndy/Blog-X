@@ -36,6 +36,10 @@ const BlogCards = ({ blogs, selectedCategory, searchTerm, sortBy }) => {
         filteredBlogs = [...filteredBlogs].sort((a, b) =>
             new Date(b.published_date) - new Date(a.published_date)
         );
+    } else if (sortBy === 'datei') {
+        filteredBlogs = [...filteredBlogs].sort((a, b) =>
+            new Date(a.published_date) - new Date(b.published_date)
+        );
     } else if (sortBy === 'author') {
         filteredBlogs = [...filteredBlogs].sort((a, b) =>
             a.author.localeCompare(b.author)
@@ -50,7 +54,7 @@ const BlogCards = ({ blogs, selectedCategory, searchTerm, sortBy }) => {
                 <div className="grid w-full md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mb-8 min-h-[300px]">
                     {visibleBlogs.length > 0 ? (
                         visibleBlogs.map((blog) => 
-                            <Link key={blog.id} className="p-5 shadow-lg rounded cursor-pointer">
+                            <Link to={`/blog/${blog.id}`} key={blog.id} className="p-5 shadow-lg rounded cursor-pointer">
                                 <div>
                                     <img src={blog.image} alt="" className="w-full" />
                                 </div>

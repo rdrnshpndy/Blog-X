@@ -16,11 +16,11 @@ const Sidebar = () => {
     }, []);
 
     return (
-        <div className="w-max max-w-xs" >
+        <div className="w-max max-w-full md:max-w-xs" >
             <div>
                 <h3 className="text-2xl font-semibold border-b-2 pb-2">Latest Blogs</h3>
                 {popularBlogs.slice(0, 10).map((blog) => (
-                    <div key={blog.id} className="mt-5 text-sm pl-2 border-gray-500 border-b-1 pb-2">
+                    <div key={blog.id} className="mt-5 text-sm md:pl-2 border-gray-500 border-b-1 pb-2">
                         <Link
                             to="/"
                             className="hover:text-orange-500 cursor-pointer line-clamp-2">

@@ -3,8 +3,8 @@ import { FaSortAlphaDown, FaSearch, FaChevronDown, FaCheck } from 'react-icons/f
 
 const sortOptions = [
   { value: 'az', label: 'A-Z' },
-  { value: 'date', label: 'Date Published' },
-  { value: 'author', label: 'Author' },
+  { value: 'date', label: 'Newest to Oldest' },
+  { value: 'datei', label: 'Oldest to Newest' }
 ];
 
 const Searchingsorting = ({ onSearch, onSort }) => {
