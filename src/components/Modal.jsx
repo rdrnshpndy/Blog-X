@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUser, FaKey } from 'react-icons/fa';
 
 const Modal = ({ isOpen, onClose }) => {
   return (
@@ -9,14 +10,20 @@ const Modal = ({ isOpen, onClose }) => {
           <h2 className="text-xl font-semibold mb-4 mt-6 uppercase">Please Login Here!</h2>
           <form className="px-4">
             {/* email */}
-            <div className="mb-5">
+            <div className="mb-5 relative">
+              <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#687280]">
+                <FaUser />
+              </span>
               <input type="email" name="email" id="email" placeholder="enter @gmail.com"
-                className="w-full rounded-md border border-[#e6e6e6] bg-white py-3 px-6 text-base 
+                className="w-full pl-12 rounded-md border border-[#e6e6e6] bg-white py-3 px-6 text-base 
                 font-medium text-[#687280] outline-none focus:border-[#64a4f1] focus:shadow-md" />
             </div>
-            <div className='mb-5'>
+            <div className='mb-5 relative'>
+              <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#687280]">
+                <FaKey />
+              </span>
               <input type="password" name="password" id="password" placeholder="Enter your password"
-                className="w-full rounded-md border border-[#e6e6e6] bg-white py-3 px-6 text-base 
+                className="w-full pl-12 rounded-md border border-[#e6e6e6] bg-white py-3 px-6 text-base 
                 font-medium text-[#687280] outline-none focus:border-[#64a4f1] focus:shadow-md" />
             </div>
             <div>
