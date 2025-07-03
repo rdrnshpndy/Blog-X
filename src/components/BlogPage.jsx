@@ -61,11 +61,15 @@ const BlogPage = () => {
 
                     <div>
                     <BlogCard
-                        blogs={blogs}
-                        selectedCategory={selectedCategory}
-                        searchTerm={searchTerm}
-                        sortBy={sortBy}
-                    />
+  blogs={blogs.map(blog => ({
+    ...blog,
+    category: blog.author // use 'author' field as 'category'
+  }))}
+  selectedCategory={selectedCategory}
+  searchTerm={searchTerm}
+  sortBy={sortBy}
+/>
+
                     </div>
                     
                 </div>
