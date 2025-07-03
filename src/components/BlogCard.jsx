@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import { FaArrowDown } from 'react-icons/fa';
 
@@ -52,7 +52,8 @@ const BlogCards = ({ blogs, selectedCategory, searchTerm, sortBy }) => {
                         visibleBlogs.map((blog) => 
                             <Link key={blog.id} className="p-5 shadow-lg rounded cursor-pointer">
                                 <div>
-                                    <img src={blog.image} alt="" className="w-full" />
+                                    <img src={`http://localhost:5000/uploads/${blog.image}`} alt={blog.title} className="w-full h-48 object-cover rounded" />
+
                                 </div>
                                 <h3 className="mt-4 mb-2 font-bold hover:text-orange-500 cursor-pointer line-clamp-2">{blog.title}</h3>
                                 <p className="mb-2"><FaUser className="inline-flex items-center mr-2" />{blog.author}</p>
