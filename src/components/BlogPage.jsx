@@ -15,7 +15,7 @@ const BlogPage = () => {
     useEffect(() => {
         async function fetchBlogs() {
 
-            let url = `http://localhost:5000/blogs`;
+            let url = `http://localhost:5001/blogs`;
 
             if (selectedCategory) {
                 url += `?category=${selectedCategory}`;
