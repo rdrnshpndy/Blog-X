@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 import { FaArrowDown } from 'react-icons/fa';
 
@@ -23,26 +23,26 @@ const BlogCards = ({ blogs, selectedCategory, searchTerm, sortBy }) => {
     // Filter by search term in title (case-insensitive)
     if (searchTerm) {
         filteredBlogs = filteredBlogs.filter(blog =>
-            blog.title.toLowerCase().includes(searchTerm.toLowerCase())
+            blog.title && blog.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
     }
 
     // Sort
     if (sortBy === 'az') {
         filteredBlogs = [...filteredBlogs].sort((a, b) =>
-            a.title.localeCompare(b.title)
+            (a.title || '').localeCompare(b.title || '')
         );
     } else if (sortBy === 'date') {
         filteredBlogs = [...filteredBlogs].sort((a, b) =>
-            new Date(b.published_date) - new Date(a.published_date)
+            new Date(b.date) - new Date(a.date)
         );
     } else if (sortBy === 'datei') {
         filteredBlogs = [...filteredBlogs].sort((a, b) =>
-            new Date(a.published_date) - new Date(b.published_date)
+            new Date(a.date) - new Date(b.date)
         );
     } else if (sortBy === 'author') {
         filteredBlogs = [...filteredBlogs].sort((a, b) =>
-            a.author.localeCompare(b.author)
+            (a.author || '').localeCompare(b.author || '')
         );
     }
 
@@ -54,13 +54,15 @@ const BlogCards = ({ blogs, selectedCategory, searchTerm, sortBy }) => {
                 <div className="grid w-full md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mb-8 min-h-[300px]">
                     {visibleBlogs.length > 0 ? (
                         visibleBlogs.map((blog) => 
-                            <Link to={`/blog/${blog.id}`} key={blog.id} className="p-5 shadow-lg rounded cursor-pointer">
+                            <Link to={`/blog/${blog._id || blog.id}`} key={blog._id || blog.id} className="p-5 shadow-lg rounded cursor-pointer">
                                 <div>
-                                    <img src={blog.image} alt="" className="w-full" />
+                                    {blog.image && (
+                                        <img src={`http://localhost:5001/uploads/${blog.image}`} alt={blog.title} className="w-full h-48 object-cover rounded" />
+                                    )}
                                 </div>
                                 <h3 className="mt-4 mb-2 font-bold hover:text-orange-500 cursor-pointer line-clamp-2">{blog.title}</h3>
                                 <p className="mb-2"><FaUser className="inline-flex items-center mr-2" />{blog.author}</p>
-                                <p className="text-sm text-gray-500">Published: {blog.published_date}</p>
+                                <p className="text-sm text-gray-500">Published: {blog.date ? new Date(blog.date).toLocaleDateString() : ''}</p>
                             </Link>
                         )
                     ) : (

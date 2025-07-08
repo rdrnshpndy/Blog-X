@@ -5,8 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from './App.jsx'
 import Blog from './pages/Blog.jsx'
 import Home from './pages/Home.jsx'
-import AllBlogs from './pages/AllBlogs.jsx'
 import SingleBlog from './pages/SingleBlog.jsx'
+import PrivateRoute from './components/PrivateRoute.jsx';
+import Adminpage from './pages/Adminpage.jsx';
 
 // Define routes using createBrowserRouter
 const router = createBrowserRouter([
@@ -25,7 +26,12 @@ const router = createBrowserRouter([
             loader: ({ params }) => fetch(`http://localhost:5001/blogs/${params.id}`)
           }
         ]
-      }
+      },
+      {
+        path: "admin",
+        element: <PrivateRoute> 
+          <Adminpage />
+        </PrivateRoute>     },
     ]
   }
 ]);

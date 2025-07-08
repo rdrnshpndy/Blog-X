@@ -12,7 +12,8 @@ function getStoredComments(blogId) {
 
 const SingleBlog = () => {
   const data = useLoaderData();
-  const { title, image, category, author, published_date, reading_time, content, id } = data[0];
+  // data is now a single blog object
+  const { _id: id, title, image, category, author, date, content } = data;
 
   // Use blog id to store/retrieve comments
   const [comments, setComments] = useState(() => getStoredComments(id));
@@ -26,11 +27,11 @@ const SingleBlog = () => {
     e.preventDefault();
     if (commentInput.trim() === "") return;
     const now = new Date();
-    const date = now.toISOString().slice(0, 10);
+    const dateStr = now.toISOString().slice(0, 10);
     const time = now.toTimeString().slice(0, 5);
     const newComments = [
       ...comments,
-      { name: "Anonymous", text: commentInput, date, time }
+      { name: "Anonymous", text: commentInput, date: dateStr, time }
     ];
     setComments(newComments);
     localStorage.setItem(`comments_${id}`, JSON.stringify(newComments));
@@ -47,11 +48,17 @@ const SingleBlog = () => {
       <div className="max-w-full mx-10 py-12 flex flex-col lg:flex-row gap-8">
         <div className="lg:w-3/4 md:mr-3">
           <div>
-            <img src={image} alt="" className="md:w-3/4 w-full mx-auto px-auto rounded border-2" />
+            {image && (
+              <img
+                src={`http://localhost:5001/uploads/${image}`}
+                alt={title}
+                className="md:w-3/4 w-full mx-auto px-auto rounded border-2"
+              />
+            )}
           </div>
           <h2 className="text-3xl mt-8 font-bold mb-4 text-orange-500 cursor-pointer">{title}</h2>
-          <p className="mb-3 text-gray-600"><FaUser className="inline-flex items-center mr-2" />{author} | {published_date}</p>
-          <p className="mb-3 text-gray-600"><FaClock className="inline-flex items-center mr-2" />{reading_time}</p>
+          <p className="mb-3 text-gray-600"><FaUser className="inline-flex items-center mr-2" />{author} | {date ? new Date(date).toLocaleDateString() : ''}</p>
+          {/* <p className="mb-3 text-gray-600"><FaClock className="inline-flex items-center mr-2" />{reading_time}</p> */}
           {/* Render formatted HTML content */}
           <div
             className="text-base mt-8 text-gray-900 mb-6"

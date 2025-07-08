@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CategorSelection = ({ onSelectCategory, activeCategory }) => {
+const CategorySelection = ({ onSelectCategory, activeCategory }) => {
     const categories = ["Startups", "Security", "AI", "Apps", "Tech"];
 
     return (
@@ -26,4 +26,4 @@ const CategorSelection = ({ onSelectCategory, activeCategory }) => {
     );
 };
 
-export default CategorSelection;
+export default CategorySelection;

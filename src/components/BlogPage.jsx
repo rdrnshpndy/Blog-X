@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
-import CategorSelection from './CategorySelection';
+import CategorySelection from './CategorySelection';
 import Sidebar from './Sidebar';
 import Searchingsorting from './searchingsorting'; // Assuming this is a component for search and sorting functionality
 
@@ -43,7 +43,7 @@ const BlogPage = () => {
         <div>
             {/* category section */}
             <div className='px-6'>
-                <CategorSelection onSelectCategory={handleCategoryChange} activeCategory={activeCategory} selectedCategory={selectedCategory} />
+                <CategorySelection onSelectCategory={handleCategoryChange} activeCategory={activeCategory} selectedCategory={selectedCategory} />
             </div>
 
             {/* blog card section */}
@@ -60,12 +60,12 @@ const BlogPage = () => {
                     
 
                     <div>
-                    <BlogCard
-                        blogs={blogs}
-                        selectedCategory={selectedCategory}
-                        searchTerm={searchTerm}
-                        sortBy={sortBy}
-                    />
+                        <BlogCard
+                            blogs={blogs}
+                            selectedCategory={selectedCategory}
+                            searchTerm={searchTerm}
+                            sortBy={sortBy}
+                        />
                     </div>
                     
                 </div>
