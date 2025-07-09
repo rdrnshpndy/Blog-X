@@ -221,20 +221,15 @@ const Adminpage = () => {
               required
               aria-label="Author name"
             />
-            <select
+            <input
+              type="text"
+              placeholder="Category"
               className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               required
               aria-label="Category"
-            >
-              <option value="" disabled>Select category</option>
-              <option value="AI">AI</option>
-              <option value="Finance">Finance</option>
-              <option value="Management">Management</option>
-              <option value="Sports">Sports</option>
-            </select>
-
+            />
             <input
               type="text"
               placeholder="Tags (comma separated)"
