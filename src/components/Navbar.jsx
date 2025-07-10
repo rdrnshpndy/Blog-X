@@ -30,6 +30,14 @@ const Navbar = () => {
         }
     }, [isModalOpen]);
 
+    // Auto sign out when leaving admin panel
+    useEffect(() => {
+        if (location.pathname !== '/admin' && isLoggedIn) {
+            localStorage.removeItem('token');
+            setIsLoggedIn(false);
+        }
+    }, [location.pathname]);
+    
     const handleLogout = () => {
         localStorage.removeItem('token');
         setIsLoggedIn(false);

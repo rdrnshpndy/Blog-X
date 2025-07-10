@@ -50,28 +50,43 @@ const BlogCards = ({ blogs, selectedCategory, searchTerm, sortBy }) => {
 
     return (
         <>
-            <div className="w-full">
-                <div className="grid w-full md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mb-8 min-h-[300px]">
-                    {visibleBlogs.length > 0 ? (
-                        visibleBlogs.map((blog) => 
-                            <Link to={`/blog/${blog._id || blog.id}`} key={blog._id || blog.id} className="p-5 shadow-lg rounded cursor-pointer">
-                                <div>
-                                    {blog.image && (
-                                        <img src={`http://localhost:5001/uploads/${blog.image}`} alt={blog.title} className="w-full h-48 object-cover rounded" />
-                                    )}
-                                </div>
-                                <h3 className="mt-4 mb-2 font-bold hover:text-orange-500 cursor-pointer line-clamp-2">{blog.title}</h3>
-                                <p className="mb-2"><FaUser className="inline-flex items-center mr-2" />{blog.author}</p>
-                                <p className="text-sm text-gray-500">Published: {blog.date ? new Date(blog.date).toLocaleDateString() : ''}</p>
-                            </Link>
-                        )
-                    ) : (
-                        <div className="min-w-[1100px] overflow-hidden flex justify-center items-center text-gray-400 text-lg font-semibold">
-                            No blogs found.
-                        </div>
-                    )}
-                </div>
-            </div>
+<div className="w-full">
+      <div className="grid w-full md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mb-8">
+        {visibleBlogs.length > 0 ? (
+          visibleBlogs.map((blog) => (
+            <Link
+              to={`/blog/${blog._id || blog.id}`}
+              key={blog._id || blog.id}
+              className="p-5 shadow-lg rounded cursor-pointer flex flex-col"
+            >
+              <div className="w-full h-64 overflow-hidden rounded">
+                {blog.image && (
+                  <img
+                    src={`http://localhost:5001/uploads/${blog.image}`}
+                    alt={blog.title}
+                    className="w-100 h-full object-cover"
+                  />
+                )}
+              </div>
+              <h3 className="mt-4 mb-2 font-bold hover:text-orange-500 cursor-pointer line-clamp-2">
+                {blog.title}
+              </h3>
+              <p className="mb-2">
+                <FaUser className="inline-flex items-center mr-2" />
+                {blog.author}
+              </p>
+              <p className="text-sm text-gray-500">
+                Published: {blog.date ? new Date(blog.date).toLocaleDateString() : ''}
+              </p>
+            </Link>
+          ))
+        ) : (
+          <div className="min-w-100 overflow-hiden flex justify-center items-center text-gray-400 text-lg font-semibold">
+            No blogs found.
+          </div>
+        )}
+      </div>
+    </div>
             {!showAll && visibleCount < filteredBlogs.length && (
                 <div className="flex justify-center mb-6">
                     <button

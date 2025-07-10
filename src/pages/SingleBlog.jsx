@@ -49,11 +49,13 @@ const SingleBlog = () => {
         <div className="lg:w-3/4 md:mr-3">
           <div>
             {image && (
+            <div style={{ backgroundColor: 'black' }}>
               <img
                 src={`http://localhost:5001/uploads/${image}`}
                 alt={title}
-                className="md:w-3/4 w-full mx-auto px-auto rounded border-2"
+                className="w-full h-[500px] object-contain rounded border-2"
               />
+            </div>
             )}
           </div>
           <h2 className="text-3xl mt-8 font-bold mb-4 text-orange-500 cursor-pointer">{title}</h2>
