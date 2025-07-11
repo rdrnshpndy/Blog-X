@@ -8,6 +8,7 @@ import Home from './pages/Home.jsx'
 import SingleBlog from './pages/SingleBlog.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Adminpage from './pages/Adminpage.jsx';
+import Colleges from './pages/Colleges.jsx';
 
 // Define routes using createBrowserRouter
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             loader: ({ params }) => fetch(`http://localhost:5001/blogs/${params.id}`)
           }
         ]
+      },
+      {
+        path: "colleges",
+        element: <Colleges />
       },
       {
         path: "admin",
