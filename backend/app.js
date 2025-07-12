@@ -5,7 +5,9 @@ import cors from 'cors';
 import path from 'path';
 import postRoutes from './routes/posts.js';
 import authRoutes from './routes/auth.js'; // NEW
+import authColleges from './routes/colleges.js';
 import Post from './models/post.js';
+import College from './models/college.js';
 import { fileURLToPath } from 'url';
 
 dotenv.config();
@@ -27,6 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
 // Routes
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes); 
+app.use('/api/colleges', authColleges);
 
 app.get('/', (req, res) => res.send('API running'));
 

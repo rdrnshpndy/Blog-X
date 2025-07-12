@@ -9,6 +9,8 @@ import SingleBlog from './pages/SingleBlog.jsx'
 import PrivateRoute from './components/PrivateRoute.jsx';
 import Adminpage from './pages/Adminpage.jsx';
 import Colleges from './pages/Colleges.jsx';
+import CMSBlog from './pages/CMSBlog.jsx';
+import CMSColleges from './pages/CMSColleges.jsx';
 
 // Define routes using createBrowserRouter
 const router = createBrowserRouter([
@@ -34,9 +36,18 @@ const router = createBrowserRouter([
       },
       {
         path: "admin",
-        element: <PrivateRoute> 
-          <Adminpage />
-        </PrivateRoute>     },
+        children: [
+          { index: true, element: <PrivateRoute><Adminpage/> </PrivateRoute> },
+          {
+            path: "cmsblog",
+            element: <PrivateRoute><CMSBlog /></PrivateRoute>
+          },
+          {
+            path: "cmscolleges",
+            element: <PrivateRoute><CMSColleges /></PrivateRoute>
+          },
+        ]
+      },
     ]
   }
 ]);
