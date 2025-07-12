@@ -6,7 +6,7 @@ const mockColleges = [
     state: 'Maharashtra',
     city: 'Mumbai',
     nirfRank: 3,
-    photo: '/IIT-Bombay.webp',
+    photo: '/images/IIT-Bombay.webp',
     url: 'https://example.com/college-1',
   },
   {
@@ -16,7 +16,7 @@ const mockColleges = [
     state: 'Tamil Nadu',
     city: 'Tiruchirappalli',
     nirfRank: 8,
-    photo: '/NIT-Trichy.webp',
+    photo: '/images/NIT-Trichy.webp',
     url: 'https://example.com/college-2',
   },
   {
@@ -26,7 +26,7 @@ const mockColleges = [
     state: 'Rajasthan',
     city: 'Pilani',
     nirfRank: 25,
-    photo: '/BITS-Pilani.webp',
+    photo: '/images/BITS-Pilani.webp',
     url: 'https://example.com/college-3',
   },
   {
@@ -36,7 +36,7 @@ const mockColleges = [
     state: 'Uttar Pradesh',
     city: 'Allahabad',
     nirfRank: 40,
-    photo: '/IIIT-Allahabad.webp',
+    photo: '/images/IIIT-Allahabad.webp',
     url: 'https://example.com/college-4',
   },
   {
@@ -46,7 +46,7 @@ const mockColleges = [
     state: 'Karnataka',
     city: 'Surathkal',
     nirfRank: 10,
-    photo: '/NIT-Karnataka.webp',
+    photo: '/images/NIT-Karnataka.webp',
     url: 'https://example.com/college-5',
   },
   {
@@ -56,7 +56,7 @@ const mockColleges = [
     state: 'Delhi',
     city: 'New Delhi',
     nirfRank: 2,
-    photo: '/IIT-Delhi.webp',
+    photo: '/images/IIT-Delhi.webp',
     url: 'https://example.com/college-6',
   },
   {
@@ -66,7 +66,7 @@ const mockColleges = [
     state: 'Goa',
     city: 'Goa',
     nirfRank: 30,
-    photo: '/BITS-Goa.webp',
+    photo: '/images/BITS-Goa.webp',
     url: 'https://example.com/college-7',
   },
   {
@@ -76,7 +76,7 @@ const mockColleges = [
     state: 'Telangana',
     city: 'Hyderabad',
     nirfRank: 55,
-    photo: '/IIIT-Hyderbad.webp',
+    photo: '/images/IIIT-Hyderbad.webp',
     url: 'https://example.com/college-8',
   },
   {
@@ -86,7 +86,7 @@ const mockColleges = [
     state: 'Telangana',
     city: 'Warangal',
     nirfRank: 21,
-    photo: '/NIT-WARANGAL.webp',
+    photo: '/images/NIT-WARANGAL.webp',
     url: 'https://example.com/college-9',
   },
   {
@@ -96,7 +96,7 @@ const mockColleges = [
     state: 'Tamil Nadu',
     city: 'Chennai',
     nirfRank: 1,
-    photo: '/IIT-Madras.webp',
+    photo: '/images/IIT-Madras.webp',
     url: 'https://example.com/college-10',
   },
 ];
