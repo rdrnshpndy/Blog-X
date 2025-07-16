@@ -6,6 +6,16 @@ import path from 'path';
 import postRoutes from './routes/posts.js';
 import authRoutes from './routes/auth.js'; // NEW
 import authColleges from './routes/colleges.js';
+import admissionRoutes from './routes/admissionrout.js';
+import overviewRoutes from './routes/overviewrout.js';
+import cutoffRoutes from './routes/cutoffrout.js';
+import locationRoutes from './routes/locationrout.js';
+import heroRoutes from './routes/herorout.js';
+import feesRoutes from './routes/feesrout.js';
+import rankingRoutes from './routes/rankingrout.js';
+import seatmatrixRoutes from './routes/seatmatrixrout.js';
+import placementRoutes from './routes/placementrout.js';
+import reviewRoutes from './routes/reviewrout.js';
 import Post from './models/post.js';
 import College from './models/college.js';
 import { fileURLToPath } from 'url';
@@ -30,6 +40,16 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/posts', postRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/colleges', authColleges);
+app.use('/api/admission', admissionRoutes);
+app.use('/api/overview', overviewRoutes);
+app.use('/api/cutoff', cutoffRoutes);
+app.use('/api/location', locationRoutes);
+app.use('/api/hero', heroRoutes);
+app.use('/api/fees', feesRoutes);
+app.use('/api/ranking', rankingRoutes);
+app.use('/api/seatmatrix', seatmatrixRoutes);
+app.use('/api/placement', placementRoutes);
+app.use('/api/review', reviewRoutes);
 
 app.get('/', (req, res) => res.send('API running'));
 
@@ -44,10 +64,10 @@ app.get('/blogs', async (req, res) => {
   }
 });
 
-// Add this route to fetch a single blog by ID
-app.get('/blogs/:id', async (req, res) => {
+// Add this route to fetch a single blog by slug
+app.get('/blogs/:slug', async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
+    const post = await Post.findOne({ slug: req.params.slug });
     if (!post) return res.status(404).json({ message: 'Not found' });
     res.json(post);
   } catch (err) {

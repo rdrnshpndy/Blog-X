@@ -25,6 +25,13 @@ const CMSColleges = () => {
   const [nearestAirport, setNearestAirport] = useState('');
   const [nearestRailwayStation, setNearestRailwayStation] = useState('');
   const [overview, setOverview] = useState('');
+    const [overviewPara1, setOverviewPara1] = useState('');
+    const [overviewPara2, setOverviewPara2] = useState('');
+    const [overviewPara3, setOverviewPara3] = useState('');
+    const [contactEmail, setContactEmail] = useState('');
+    const [contactNumber, setContactNumber] = useState('');
+    const [officialWebsite, setOfficialWebsite] = useState('');
+    const [googleMapsIframe, setGoogleMapsIframe] = useState('');
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -89,6 +96,13 @@ const CMSColleges = () => {
       nearestAirport: nearestAirport.trim(),
       nearestRailwayStation: nearestRailwayStation.trim(),
       overview: overview.trim(),
+        overviewPara1: overviewPara1.trim(),
+        overviewPara2: overviewPara2.trim(),
+        overviewPara3: overviewPara3.trim(),
+        contactEmail: contactEmail.trim(),
+        contactNumber: contactNumber.trim(),
+        officialWebsite: officialWebsite.trim(),
+        googleMapsIframe: googleMapsIframe.trim()
     };
 
     const token = localStorage.getItem('token');
@@ -174,6 +188,13 @@ const CMSColleges = () => {
     setNearestAirport(college.nearestAirport || '');
     setNearestRailwayStation(college.nearestRailwayStation || '');
     setOverview(college.overview || '');
+      setOverviewPara1(college.overviewPara1 || '');
+      setOverviewPara2(college.overviewPara2 || '');
+      setOverviewPara3(college.overviewPara3 || '');
+        setContactEmail(college.contactEmail || '');
+        setContactNumber(college.contactNumber || '');
+        setOfficialWebsite(college.officialWebsite || '');
+        setGoogleMapsIframe(college.googleMapsIframe || '');
     setIsCreateVisible(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setOtherType(college.type === 'Other' ? college.type : '');
@@ -191,11 +212,18 @@ const CMSColleges = () => {
     setType('');
     setOwnership('');
     setBranch('');
-    setOtherType('');
     setAddress('');
     setNearestAirport('');
     setNearestRailwayStation('');
     setOverview('');
+      setOverviewPara1('');
+      setOverviewPara2('');
+      setOverviewPara3('');
+        setContactEmail('');
+        setContactNumber('');
+        setOfficialWebsite('');
+        setGoogleMapsIframe('');
+    setOtherType('');
   };
 
   const handleImageChange = (e) => {
@@ -308,31 +336,7 @@ const CMSColleges = () => {
                 onChange={(e) => setCity(e.target.value)}
                 aria-label="City"
               />
-              <input
-                type="text"
-                placeholder="Address"
-                className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                aria-label="Address"
-              />
-              <input
-                type="text"
-                placeholder="Nearest Airport"
-                className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
-                value={nearestAirport}
-                onChange={(e) => setNearestAirport(e.target.value)}
-                aria-label="Nearest Airport"
-              />
-              <input
-                type="text"
-                placeholder="Nearest Railway Station"
-                className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
-                value={nearestRailwayStation}
-                onChange={(e) => setNearestRailwayStation(e.target.value)}
-                aria-label="Nearest Railway Station"
-              />
-
+                           
               <input
                 type="text"
                 placeholder="Photo URL"
@@ -411,17 +415,97 @@ const CMSColleges = () => {
                 aria-label="Branch"
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="overview" className="text-lg font-semibold">Overview:</label>
-              <textarea
-                id="overview"
-                placeholder="College Overview"
-                className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400 resize-y"
-                value={overview}
-                onChange={(e) => setOverview(e.target.value)}
-                aria-label="College Overview"
-                style={{ minHeight: '150px' }}
-              />
+            <hr className="my-4" />
+              <div className="info-page">
+                <h3 className="text-xl font-bold mb-4">Info Page</h3>
+                 
+
+              <div className="mb-4">
+                <h4 className='pb-4'>Location and Campus Facilities</h4>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                 
+                  <input
+                    type="text"
+                    placeholder="Address"
+                    className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    aria-label="Address"
+                  />
+                 
+                                      <input
+                                          type="text"
+                                          placeholder="Contact Email"
+                                          className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                          value={contactEmail}
+                                          onChange={(e) => setContactEmail(e.target.value)}
+                                          aria-label="Contact Email"
+                                      />
+                                      <input
+                                          type="text"
+                                          placeholder="Contact Number"
+                                          className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                          value={contactNumber}
+                                          onChange={(e) => setContactNumber(e.target.value)}
+                                          aria-label="Contact Number"
+                                      />
+                                      <input
+                                          type="text"
+                                          placeholder="Official Website"
+                                          className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                          value={officialWebsite}
+                                          onChange={(e) => setOfficialWebsite(e.target.value)}
+                                          aria-label="Official Website"
+                                      />
+                                      <input
+                                          type="text"
+                                          placeholder="Google Maps Iframe"
+                                          className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                                          value={googleMapsIframe}
+                                          onChange={(e) => setGoogleMapsIframe(e.target.value)}
+                                          aria-label="Google Maps Iframe"
+                                      />
+                  
+                  <input
+                    type="text"
+                    placeholder="Nearest Airport"
+                    className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    value={nearestAirport}
+                    onChange={(e) => setNearestAirport(e.target.value)}
+                    aria-label="Nearest Airport"
+                  />
+                 
+                  <input
+                    type="text"
+                    placeholder="Nearest Railway Station"
+                    className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    value={nearestRailwayStation}
+                    onChange={(e) => setNearestRailwayStation(e.target.value)}
+                    aria-label="Nearest Railway Station"
+                  />
+                   </div>
+              </div>
+              <div className="mb-4">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="overview" className="text-lg font-semibold">Overview:</label>
+                  <textarea
+                    id="overview"
+                    placeholder="College Overview"
+                    className="border border-blue-200 p-3 rounded focus:outline-none focus:ring-2 focus:ring-orange-400 resize-y"
+                    value={overview}
+                    onChange={(e) => setOverview(e.target.value)}
+                    aria-label="College Overview"
+                    style={{ minHeight: '150px' }}
+                  />
+                </div>
+              </div>
+
+              <div className="mb-4">
+                <h4 className="font-bold">Fee Structure</h4>
+                {/* Add fee structure input fields here */}
+              </div>
+              
             </div>
 
             <div className="flex gap-4 justify-end">
