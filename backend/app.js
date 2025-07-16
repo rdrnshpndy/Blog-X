@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use('/api/posts', postRoutes);
-app.use('/api/auth', authRoutes); 
+app.use('/api/auth', authRoutes);
 app.use('/api/colleges', authColleges);
 
 app.get('/', (req, res) => res.send('API running'));
@@ -57,5 +57,5 @@ app.get('/blogs/:id', async (req, res) => {
 });
 
 // Server start
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -32,12 +32,16 @@ router.get('/:id', verifyToken, async (req, res) => {
 router.post('/', verifyToken, async (req, res) => {
   const college = new College({
     name: req.body.name,
-    location: req.body.location,
+    state: req.body.state,
+    city: req.body.city,
     courses: req.body.courses,
     photo: req.body.photo,
     url: req.body.url,
     nirfRank: req.body.nirfRank,
     type: req.body.type,
+    ownership: req.body.ownership,
+    branch: req.body.branch,
+
   });
 
   try {
@@ -60,8 +64,11 @@ router.put('/:id', verifyToken, async (req, res) => {
     if (req.body.name != null) {
       college.name = req.body.name;
     }
-    if (req.body.location != null) {
-      college.location = req.body.location;
+    if (req.body.state != null) {
+      college.state = req.body.state;
+    }
+    if (req.body.city != null) {
+      college.city = req.body.city;
     }
     if (req.body.courses != null) {
       college.courses = req.body.courses;
@@ -78,6 +85,13 @@ router.put('/:id', verifyToken, async (req, res) => {
     if (req.body.type != null) {
       college.type = req.body.type;
     }
+    if (req.body.ownership != null) {
+      college.ownership = req.body.ownership;
+    }
+    if (req.body.branch != null) {
+      college.branch = req.body.branch;
+    }
+
 
     const updatedCollege = await college.save();
     res.json(updatedCollege);
