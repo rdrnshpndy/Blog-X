@@ -1,13 +1,13 @@
 import express from 'express';
 const router = express.Router();
-import { getAllColleges, getCollegeById, createCollege, updateCollege, deleteCollege } from '../Controller/collegecon.js';
+import { getAllColleges, getCollegeBySlug, createCollege, updateCollege, deleteCollege } from '../Controller/collegecon.js';
 import verifyToken from '../middleware/verifyToken.js';
 
 // GET all colleges
 router.get('/', verifyToken, getAllColleges);
 
 // GET a single college by slug
-router.get('/:slug', verifyToken, getCollegeById);
+router.get('/:slug', verifyToken, getCollegeBySlug);
 
 // POST a new college
 router.post('/', verifyToken, createCollege);
