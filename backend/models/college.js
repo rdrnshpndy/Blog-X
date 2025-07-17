@@ -71,7 +71,7 @@ const admissionsSchema = new mongoose.Schema({
   eligibilitySelection: { type: [eligibilitySelectionSchema], default: [] },
   feesROI: { type: [feesROISchema], default: [] },
   seatIntake: { type: [seatIntakeSchema], default: [] },
-  modeOfAdmission: { type: String },
+  modeOfAdmission: { type: [String], default: [] },
 }, { _id: false });
 
 const courseOfferedSchema = new mongoose.Schema({
