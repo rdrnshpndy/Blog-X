@@ -296,10 +296,10 @@ const CMSColleges = () => {
         overviewPara1: overviewPara1.trim(),
         overviewPara2: overviewPara2.trim(),
         founded: founded.trim(),
-        campusSize: campusSize.trim(),
-        students: students.trim(),
-        faculty: faculty.trim(),
-        notableAlumni: notableAlumni.trim(),
+        // campusSize: campusSize.trim(), // moved to location
+        // students: students.trim(), // moved to location
+        // faculty: faculty.trim(), // moved to location
+        // notableAlumni: notableAlumni.trim(), // moved to location
         nirfRank: nirfRank,
         // keep other info fields if needed
         contactEmail: contactEmail.trim(),
@@ -317,6 +317,10 @@ const CMSColleges = () => {
         secondaryNearestRailwayStation: secondaryNearestRailwayStation.trim(),
         campusFacilities,
         googleMapsIframe: googleMapsIframe.trim(),
+        campusSize: campusSize.trim(),
+        students: students.trim(),
+        faculty: faculty.trim(),
+        notableAlumni: notableAlumni.trim(),
       },
       admissions: {
         applicationStatus: applicationStatus.trim(),

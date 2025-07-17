@@ -64,10 +64,10 @@ app.get('/blogs', async (req, res) => {
   }
 });
 
-// Add this route to fetch a single blog by slug
-app.get('/blogs/:slug', async (req, res) => {
+// Add this route to fetch a single blog by id (not slug)
+app.get('/blogs/:id', async (req, res) => {
   try {
-    const post = await Post.findOne({ slug: req.params.slug });
+    const post = await Post.findById(req.params.id);
     if (!post) return res.status(404).json({ message: 'Not found' });
     res.json(post);
   } catch (err) {

@@ -28,11 +28,6 @@ const infoSchema = new mongoose.Schema({
   notableAlumni: { type: String },
   nirfRank: { type: String },
   rankings: { type: [rankingSchema], default: [] },
-  otherInfo: { type: String },
-  contactEmail: { type: String },
-  contactNumber: { type: String },
-  officialWebsite: { type: String },
-  googleMapsIframe: { type: String },
 }, { _id: false });
 
 const locationSchema = new mongoose.Schema({
