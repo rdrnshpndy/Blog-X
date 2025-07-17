@@ -65,6 +65,10 @@ export const updateCollege = async (req, res) => {
     college.feeStructure = req.body.feeStructure || college.feeStructure;
     // Update placements
     college.placements = req.body.placements || college.placements;
+    // Update rankings (top-level)
+    if (req.body.rankings) {
+      college.rankings = req.body.rankings;
+    }
 
     const updatedCollege = await college.save();
     res.json(updatedCollege);

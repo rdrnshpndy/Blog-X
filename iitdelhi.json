@@ -1,0 +1,244 @@
+{
+    "_id": {
+        "$oid": "6878ee4895ef693cc22a92b1"
+    },
+    "filter": {
+        "name": "Indian Institute of Technology, Delhi",
+        "state": "Delhi",
+        "city": "New Delhi",
+        "courses": [
+            "B.Tech",
+            "M.Tech"
+        ],
+        "photo": "https://img.collegepravesh.com/2018/08/IIT-Delhi-Logo.png",
+        "url": "https://home.iitd.ac.in",
+        "nirfRank": {
+            "$numberInt": "3"
+        },
+        "type": "IIT",
+        "ownership": "Government",
+        "branch": [
+            "Chemical Engineering",
+            "Computer Science and Engineering"
+        ]
+    },
+    "info": {
+        "overviewPara1": "Indian Institute of Technology Delhi (IIT Delhi) is one of India's premier engineering and research institutions, located in the heart of New Delhi. Renowned for its academic excellence, cutting-edge research, and vibrant campus life, IIT Delhi consistently ranks among the top engineering colleges in India and the world.",
+        "overviewPara2": "The campus offers world-class facilities, a diverse student body, and a legacy of producing leaders in technology, business, academia, and public service. IIT Delhi's alumni network spans the globe, making a significant impact in various fields.",
+        "founded": "1961",
+        "nirfRank": "3",
+        "rankings": [
+            {
+                "type": "QS World University Rankings",
+                "value": "150 (2025)"
+            },
+            {
+                "type": "QS World University Rankings - Engineering & Technology",
+                "value": "45 (2024)"
+            },
+            {
+                "type": "QS Asia University Rankings",
+                "value": "44 (2025)\t"
+            },
+            {
+                "type": "NIRF Overall Rankings",
+                "value": "4 (2024)"
+            }
+        ]
+    },
+    "location": {
+        "address": "IIT Delhi, Hauz Khas, New Delhi, Delhi 110016",
+        "nearestAirport": "Indira Gandhi International Airport",
+        "nearestRailwayStation": "New Delhi Railway Station",
+        "nearestMetroStation": "Hauz Khas Metro Station",
+        "secondaryNearestRailwayStation": "Hazrat Nizamuddin Railway Station",
+        "campusFacilities": [
+            "Bank/ATM",
+            "Library",
+            "Wi-Fi",
+            "Cafeteria",
+            "Hostel",
+            "Boys Hostel",
+            "Girls Hostel",
+            "Medical",
+            "Sports"
+        ],
+        "googleMapsIframe": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14019.20168153966!2d77.192768!3d28.545718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1df6b9055fb5%3A0x81c10b266b1ea3c0!2sIndian%20Institute%20Of%20Technology%20Delhi%20(IIT%20Delhi)!5e0!3m2!1sen!2sin!4v1752757460483!5m2!1sen!2sin\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "admissions": {
+        "applicationStatus": "Open",
+        "popularPrograms": [
+            "BTech",
+            "MTech",
+            "MBA"
+        ],
+        "feeRangeUG": "₹8L - ₹8.7L",
+        "feeRangePG": "₹30k - ₹12.6L",
+        "studyMode": "Full-time",
+        "eligibilitySelection": [
+            {
+                "course": "BTech",
+                "eligibility": "75% in Class 12 with PCM\t",
+                "selection": "JEE Advanced + JoSAA"
+            },
+            {
+                "course": "MTech",
+                "eligibility": "BTech/BE with 60%\t",
+                "selection": "GATE + COAP"
+            }
+        ],
+        "feesROI": [
+            {
+                "course": "BTech",
+                "tuitionFee": "₹8L\t",
+                "avgPackage": "₹20L - ₹22L"
+            },
+            {
+                "course": "MTech\t",
+                "tuitionFee": "₹3L\t",
+                "avgPackage": "₹14L - ₹22L"
+            }
+        ],
+        "seatIntake": [
+            {
+                "program": "BTech",
+                "seats": "1,209"
+            },
+            {
+                "program": "MTech",
+                "seats": "1,568"
+            }
+        ],
+        "modeOfAdmission": [
+            "Apply for entrance exams (e.g., JEE, GATE, JAM, CAT)",
+            "Appear for exam and participate in counseling"
+        ]
+    },
+    "coursesOffered": [
+        {
+            "courseName": "B.E./B.Tech.",
+            "duration": "4 Years",
+            "branches": [
+                "Chemical Engineering",
+                "Computer Science and Engineering"
+            ]
+        },
+        {
+            "courseName": "B.Tech + M.Tech. (Dual Degree)",
+            "duration": "5 Years",
+            "branches": [
+                "Chemical Engineering",
+                "Computer Science and Engineering"
+            ]
+        }
+    ],
+    "feeStructure": {
+        "tables": [
+            {
+                "tableName": "Institute Fee",
+                "rows": [
+                    {
+                        "particular": "Caution Money (One-Time, Refundable)",
+                        "amount": "₹8,000"
+                    },
+                    {
+                        "particular": "One-Time Fees",
+                        "amount": "₹8,150"
+                    }
+                ]
+            },
+            {
+                "tableName": "Hostel Fee",
+                "rows": [
+                    {
+                        "particular": "One-Time Fees",
+                        "amount": "₹7,000"
+                    },
+                    {
+                        "particular": "Mess Charges (per Semester)",
+                        "amount": "₹35,000"
+                    }
+                ]
+            }
+        ],
+        "waivers": [
+            "100% Tuition Fee waiver for SC/ST/PwD students.",
+            "100% Tuition Fee remission for Most Economically Backward students with family income less than ₹1 lakh per annum."
+        ]
+    },
+    "placements": [
+        {
+            "year": "2024",
+            "courses": [
+                {
+                    "courseName": "B.Tech.",
+                    "branches": [
+                        {
+                            "branchName": "Chemical Engineering",
+                            "percentage": "72.06%"
+                        },
+                        {
+                            "branchName": "Computer Science and Engineering",
+                            "percentage": "86.92%"
+                        }
+                    ],
+                    "overall": "72.97%"
+                },
+                {
+                    "courseName": "B.Tech + M.Tech.",
+                    "branches": [
+                        {
+                            "branchName": "Chemical Engineering",
+                            "percentage": "71.74%"
+                        },
+                        {
+                            "branchName": "Computer Science and Engineering",
+                            "percentage": "97.56%"
+                        }
+                    ],
+                    "overall": "82.35%"
+                }
+            ],
+            "medianPackage": "Rs. 19.70 Lakhs per Annum",
+            "averagePackage": "",
+            "recruiters": [
+                {
+                    "name": "Air India",
+                    "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAOVBMVEVHcEzYDizHDy7UDivYDizQDSvigGrztIn/26HRT0zKDSzBPj7KoW6whFTEDy7ADi+8DzC4EDG1EDL6S4mCAAAAE3RSTlMAIKz/H/////////////////8fRztCkQAAAP1JREFUeAF9jQUChDAMBBepK/z/sZemORymEhsoMIzTK+MMzNMnA8ZvYYSavsGkFDlqW9cCisKZcwNbVxtrjXZcPAjaCsYpfxa8p44hNkUrz4snJFB0E9+7E6juDjghOP5fiuHfVZDhZmlD85T8HxbOOJqnsAm5x8y7E1iQEj4znhdHnxNBgUfIHAXPuad5DKKDO/34nrc3YkzSQH6gRDIkR36C5jFsQslnqA5NKC0rKBtZQlskuF6C2rl3JWFI4Kz/ocoRRJAMVeayeijROApUsiBwIlLUUlXUJ4Le0mfB1eUgLLxOgWNfWBpVLolHMC6fjFi/hRVYx4/vV/wAh8ssO7yHTMQAAAAASUVORK5CYII="
+                },
+                {
+                    "name": "Google",
+                    "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAA7VBMVEVHcEz/RkL/R0D+SEr/RUD/RkOwjlb/SD7/SE3/SUj/Vzb/VDf9TFb8TVeHoFb/YTD/byn8TVn/jRr/fSL/mxL/SEj+yQn/ohH/tQv+VUb/vQn/wwn+zgj9wQm3xQ39zgT6zQYwhv/7zgowhv8uhv0ek+Avhv7yzAPjywIvhv0whv7PyQHUygIth/y3yAEnivSlxwGSxgUak94fj+h5xAlgwxMLqp8NnsQVlte6xwBNwh45wC0xwDMLt28IrJgJpa0kjPCaxQEpvzsevkkWvVANumQQu18JtXkIsIgTvVYOvGALuWtJwh4OvF8OvF9ccfxCAAAAT3RSTlMAUZvT7P8T//+wiv//kAv6/mD//+V2jv//JKf//0EmxOr/rP7+MEX//x10/6eu//3+/9v///7I//+K//+KS/3/YeX//7dsnv7/////5s3tMAqBMAAAAXFJREFUeAF0jUUCwCAMwDp3d/f9/4krnVt6goQCFzheECVJFHgOPpB5RZHYIKqqyU+vGwpCXkVM07pp2zEQ8hSYiCBf1rsuFrQCvaSahHe+9wMqWHJuOD2E/lYoWsRxkUbBxcdJshY6bEQ3L6fpWmTnXXbxkBcpJTb8UBZFgUX156uyLLHI4Y+YgqL+DZqS0R7n7o4NLQX9GQwbI5tugpKI7wF5Rjd/BiNCCQZfX5BfCwyWrsnagGEYiKKpMkLqgJmZmXn/caKTzGoM7+v4IEiWPQdJ4fMhFujHCzjH7Wny6xFwMB9UKBa4KN3Tl4kh9AZYVJRbpXhVVRGX0asEXNP1a7MM0wQJA+0WFcQtyz7bcFzPAwn+8AkPwmjDcZK6WJGR75zwsCirOo7rpu0SojC2oQUeIF72/TCMY4sUKSj2wX9iXgAHwYgEoKBPizOBgx4EhwnCtxOtDnYTzn1Gnw3wzYQT3zDJrpmXYVjmpj7d/gPknlJE6eZSewAAAABJRU5ErkJggg=="
+                }
+            ]
+        },
+        {
+            "year": "2023",
+            "courses": [
+                {
+                    "courseName": "B.Tech.",
+                    "branches": [
+                        {
+                            "branchName": "Chemical Engineering",
+                            "percentage": "82.61%"
+                        },
+                        {
+                            "branchName": "Computer Science and Engineering",
+                            "percentage": "91.04%"
+                        }
+                    ],
+                    "overall": "89.90%"
+                },
+                {
+                    "courseName": "B.Tech + M.Tech.",
+                    "branches": [],
+                    "overall": "90.01%"
+                }
+            ],
+            "medianPackage": "17.40",
+            "averagePackage": "18.60",
+            "recruiters": []
+        }
+    ],
+    "slug": "indian-institute-of-technology-delhi"
+}

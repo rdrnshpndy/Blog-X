@@ -27,7 +27,7 @@ const infoSchema = new mongoose.Schema({
   faculty: { type: String },
   notableAlumni: { type: String },
   nirfRank: { type: String },
-  rankings: { type: [rankingSchema], default: [] },
+  otherInfo: { type: String },
 }, { _id: false });
 
 const locationSchema = new mongoose.Schema({
@@ -38,6 +38,9 @@ const locationSchema = new mongoose.Schema({
   secondaryNearestRailwayStation: { type: String },
   campusFacilities: { type: [String], default: [] },
   googleMapsIframe: { type: String },
+  contactEmail: { type: String },
+  contactNumber: { type: String },
+  officialWebsite: { type: String },
 }, { _id: false });
 
 const eligibilitySelectionSchema = new mongoose.Schema({
@@ -117,6 +120,7 @@ const collegeSchema = new mongoose.Schema({
   coursesOffered: { type: [courseOfferedSchema], default: [] },
   feeStructure: { type: feeStructureSchema, default: {} },
   placements: { type: [placementYearSchema], default: [] },
+  rankings: { type: [rankingSchema], default: [] },
   slug: {
     type: String,
     unique: true,

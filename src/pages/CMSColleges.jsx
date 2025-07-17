@@ -296,17 +296,11 @@ const CMSColleges = () => {
         overviewPara1: overviewPara1.trim(),
         overviewPara2: overviewPara2.trim(),
         founded: founded.trim(),
-        // campusSize: campusSize.trim(), // moved to location
-        // students: students.trim(), // moved to location
-        // faculty: faculty.trim(), // moved to location
-        // notableAlumni: notableAlumni.trim(), // moved to location
+        campusSize: campusSize.trim(),
+        students: students.trim(),
+        faculty: faculty.trim(),
+        notableAlumni: notableAlumni.trim(),
         nirfRank: nirfRank,
-        // keep other info fields if needed
-        contactEmail: contactEmail.trim(),
-        contactNumber: contactNumber.trim(),
-        officialWebsite: officialWebsite.trim(),
-        googleMapsIframe: googleMapsIframe.trim(),
-        rankings: rankings.filter(r => r.type && r.value),
         otherInfo: otherInfo.trim(),
       },
       location: {
@@ -317,10 +311,9 @@ const CMSColleges = () => {
         secondaryNearestRailwayStation: secondaryNearestRailwayStation.trim(),
         campusFacilities,
         googleMapsIframe: googleMapsIframe.trim(),
-        campusSize: campusSize.trim(),
-        students: students.trim(),
-        faculty: faculty.trim(),
-        notableAlumni: notableAlumni.trim(),
+        contactEmail: contactEmail.trim(),
+        contactNumber: contactNumber.trim(),
+        officialWebsite: officialWebsite.trim(),
       },
       admissions: {
         applicationStatus: applicationStatus.trim(),
@@ -362,6 +355,7 @@ const CMSColleges = () => {
           averagePackage: p.averagePackage.trim(),
           recruiters: p.recruiters.filter(r => r.name || r.imageUrl).map(r => ({ name: r.name.trim(), imageUrl: r.imageUrl.trim() }))
         })),
+      rankings: rankings.filter(r => r.type && r.value),
     };
 
     const token = localStorage.getItem('token');
@@ -450,18 +444,43 @@ const CMSColleges = () => {
     setSecondaryNearestRailwayStation(college.location?.secondaryNearestRailwayStation || '');
     setOverviewPara1(college.info?.overviewPara1 || '');
     setOverviewPara2(college.info?.overviewPara2 || '');
-    setContactEmail(college.info?.contactEmail || '');
-    setContactNumber(college.info?.contactNumber || '');
-    setOfficialWebsite(college.info?.officialWebsite || '');
-    setGoogleMapsIframe(college.info?.googleMapsIframe || '');
     setFounded(college.info?.founded || '');
-    setCampusSize(college.location?.campusSize || '');
-    setStudents(college.location?.students || '');
-    setFaculty(college.location?.faculty || '');
-    setNotableAlumni(college.location?.notableAlumni || '');
+    setCampusSize(college.info?.campusSize || '');
+    setStudents(college.info?.students || '');
+    setFaculty(college.info?.faculty || '');
+    setNotableAlumni(college.info?.notableAlumni || '');
     setCampusFacilities(college.location?.campusFacilities || []);
-    setRankings(college.info?.rankings || [{ type: '', value: '' }]);
+    setRankings(college.rankings || [{ type: '', value: '' }]);
     setOtherInfo(college.info?.otherInfo || '');
+    setContactEmail(college.location?.contactEmail || '');
+    setContactNumber(college.location?.contactNumber || '');
+    setOfficialWebsite(college.location?.officialWebsite || '');
+    setGoogleMapsIframe(college.location?.googleMapsIframe || '');
+    // Admissions
+    setEligibilitySelection(college.admissions?.eligibilitySelection || [{ course: '', eligibility: '', selection: '' }]);
+    setFeesROI(college.admissions?.feesROI || [{ course: '', tuitionFee: '', avgPackage: '' }]);
+    setSeatIntake(college.admissions?.seatIntake || [{ program: '', seats: '' }]);
+    setModeOfAdmission(college.admissions?.modeOfAdmission || ['']);
+    setApplicationStatus(college.admissions?.applicationStatus || '');
+    setPopularPrograms(college.admissions?.popularPrograms ? college.admissions.popularPrograms.join(', ') : '');
+    setFeeRangeUG(college.admissions?.feeRangeUG || '');
+    setFeeRangePG(college.admissions?.feeRangePG || '');
+    setStudyMode(college.admissions?.studyMode || '');
+    // Courses Offered
+    setCoursesOffered(college.coursesOffered || [{ courseName: '', duration: '', branches: [''] }]);
+    // Fee Structure
+    setFeeTables(college.feeStructure?.tables || [{ tableName: '', rows: [{ particular: '', amount: '' }] }]);
+    setFeeWaivers(college.feeStructure?.waivers || ['']);
+    // Placements
+    setPlacements(college.placements || [{
+      year: '',
+      courses: [
+        { courseName: '', branches: [{ branchName: '', percentage: '' }], overall: '' }
+      ],
+      medianPackage: '',
+      averagePackage: '',
+      recruiters: [{ name: '', imageUrl: '' }]
+    }]);
     setIsCreateVisible(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setOtherType(college.filter?.type === 'Other' ? college.filter.type : '');
@@ -487,10 +506,6 @@ const CMSColleges = () => {
     setOverview('');
       setOverviewPara1('');
       setOverviewPara2('');
-        setContactEmail('');
-        setContactNumber('');
-        setOfficialWebsite('');
-        setGoogleMapsIframe('');
     setFounded('');
     setCampusSize('');
     setStudents('');
@@ -500,6 +515,10 @@ const CMSColleges = () => {
     setRankings([{ type: '', value: '' }]);
     setOtherInfo('');
     setOtherType('');
+    setContactEmail('');
+    setContactNumber('');
+    setOfficialWebsite('');
+    setGoogleMapsIframe('');
   };
 
   const handleImageChange = (e) => {
